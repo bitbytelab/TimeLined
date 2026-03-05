@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[project]
+name = "TimeLined"
+dynamic = ["version"]
+description = """A data analysis tool to ingest various types of data from multiple source such as facebook data, photo gallery, gps data, telephony/communication data, financial data and many more to build a timeline to get valuable insight into activities, pattern, profiling and so on..."""
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+requires-python = ">=3.14"
+keywords = ["bitbytelab", "timelined", "facebook data analyzer", "profiling", "data-analysis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+authors = [
+  { name = "Hasan Rasel", email = "rrss.mahmud@gmail.com" },
+]
+
+maintainers = [
+  { name = "Hasan Rasel", email = "rrss.mahmud@gmail.com" },
+]
+
+dependencies = [
+    "rich",
+    "click",
+    "httpx",
+    "pillow",
+    "requests",
+    "psutil",
+    "win11toast",
+    "python-dotenv",
+    "anvil-uplink",
+    "exifread",
+    "exif",
+]
+
+[project.urls]
+Homepage = "https://timelined.github.io/"
+GitHub = "https://github.com/bitbytelab/TimeLined"
+PyPI = "https://pypi.org/project/TimeLined/"
+
+Author-GitHub = "https://github.com/rsmahmud"
+Author-LinkedIn = "https://www.linkedin.com/in/rsmahmud"
+Author-Portfolio = "https://rsmahmud.github.io/"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+only-include = ["src/timelined"]
+# packages = ["timelined"]
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "docs",
+    "examples",
+    "src",
+    "tests",
+    "README.md",
+    "pyproject.toml",
+    "ruff.toml"
+]
+
+[project.scripts]
+timelined = "timelined.cli:cli"

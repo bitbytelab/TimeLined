@@ -1,0 +1,1 @@
+"""A data analysis tool to ingest various types of data from multiple source such as facebook data, photo gallery, gps data, telephony/communication data, financial data and many more to build a timeline to get valuable insight into activities, pattern, profiling and so on..."""
